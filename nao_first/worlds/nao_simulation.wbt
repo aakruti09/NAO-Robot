@@ -1,0 +1,158 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  fieldOfView 0.1
+  orientation -0.060470424066526064 -0.06223442781899526 0.9962279878658583 4.7373612018029005
+  position 1.7525439458289698 6.494339382253913 1.4455646569588148
+  near 1
+  follow "NAO"
+}
+TexturedBackground {
+  texture "entrance_hall"
+}
+TexturedBackgroundLight {
+  texture "entrance_hall"
+}
+Floor {
+  name "center floor"
+  size 3 2
+  appearance Parquetry {
+    textureTransform TextureTransform {
+    }
+  }
+}
+Floor {
+  translation 2 -1 0
+  rotation 0 0 1 1.5707996938995747
+  name "start floor"
+  size 4 2
+  appearance Parquetry {
+    textureTransform TextureTransform {
+    }
+  }
+}
+Nao {
+  translation 2 -2.5 0.334
+  rotation 2.3464006433425346e-06 0 0.9999999999972471 1.5707963268004024
+  controller "nao_c"
+}
+Solid {
+  translation 0.57 -0.15 0.14
+  scale 1.5 1.5 1.5
+  children [
+    DEF BALL_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.3 0.5
+        roughness 0.5
+        metalness 0.7
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "Pink Object"
+  boundingObject USE BALL_SHAPE
+}
+Solid {
+  translation 1.9 -1.46 0.3
+  rotation 0 1 0 0
+  scale 0.5 0.5 0.5
+  children [
+    DEF RED_BALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.1 0.2
+        roughness 0.3
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  name "Red Ball"
+  boundingObject USE RED_BALL
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.84 0 0.15
+  rotation 0 1 0 0
+  scale 1.5 1.5 1.5
+  children [
+    DEF BLUE_BALL Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.6 1
+        roughness 0.5
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  name "Blue Ball"
+  boundingObject USE BLUE_BALL
+}
+Solid {
+  translation 1.33 0.55 0.3
+  rotation 0 1 0 0
+  scale 3 3 3
+  children [
+    DEF GOLDEN_BALL Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.4 0
+        roughness 0.5
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  name "Golden Ball"
+  boundingObject USE GOLDEN_BALL
+}
+Solid {
+  translation 2.57 0.56 0.73
+  children [
+    DEF GREEN_CYLINDER Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 1 0
+        roughness 1
+      }
+      geometry Cylinder {
+        height 1.5
+        radius 0.1
+      }
+    }
+  ]
+  name "Green Cylinder"
+  boundingObject USE GREEN_CYLINDER
+}
+Wall {
+  translation 3.04 -1 0
+  name "Wall 1"
+  size 0.1 4 0.2
+}
+Wall {
+  translation -1.53 -0.01 0
+  name "Wall 2"
+  size 0.1 2 0.2
+}
+Wall {
+  translation 0.95 -2 0
+  name "Wall 4"
+  size 0.1 2 0.2
+}
+Wall {
+  translation -0.320003 -1.05 0
+  rotation 0 0 1 1.5707996938995747
+  name "Wall 5"
+  size 0.1 2.5 0.2
+}
+Wall {
+  translation 0.75999 1.01 0
+  rotation 0 0 1 1.5707996938995747
+  name "Wall 6"
+  size 0.1 4.5 0.2
+}
